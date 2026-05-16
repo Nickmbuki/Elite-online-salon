@@ -54,13 +54,13 @@ This variable is used at frontend build time.
 
 ## Database Migrations
 
-Run migrations after setting `DATABASE_URL`:
+The backend Railway service runs this pre-deploy command automatically:
 
 ```bash
-npm run db:migrate --workspace backend
+node dist/db/bootstrap.js
 ```
 
-You can run this locally with Railway variables, or from a one-off Railway shell/session linked to the backend service.
+It connects to PostgreSQL, applies the initial schema if needed, and seeds services, business hours, testimonials, and gallery items idempotently.
 
 ## Notes
 

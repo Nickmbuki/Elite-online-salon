@@ -12,6 +12,7 @@
     ]
   },
   "deploy": {
+    "preDeployCommand": "node dist/db/bootstrap.js",
     "healthcheckPath": "/api/health",
     "healthcheckTimeout": 120,
     "restartPolicyType": "ON_FAILURE",

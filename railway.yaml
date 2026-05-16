@@ -38,4 +38,4 @@ services:
 database:
   type: PostgreSQL
   provider: Railway PostgreSQL
-  migrationCommand: npm run db:migrate --workspace backend
+  migrationCommand: node dist/db/bootstrap.js

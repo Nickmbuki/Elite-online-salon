@@ -27,4 +27,4 @@ COPY --from=build /app/backend/drizzle ./backend/drizzle
 
 WORKDIR /app/backend
 EXPOSE 8080
-CMD ["node", "dist/server.js"]
+CMD ["sh", "-c", "node dist/db/bootstrap.js && node dist/server.js"]
