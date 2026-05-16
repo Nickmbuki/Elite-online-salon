@@ -13,6 +13,7 @@
   },
   "scripts": {
     "dev": "concurrently -n backend,frontend \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "start": "node frontend/server.mjs",
     "build": "npm run build --workspace shared && npm run build --workspace backend && npm run build --workspace frontend",
     "typecheck": "npm run typecheck --workspace shared && npm run typecheck --workspace backend && npm run typecheck --workspace frontend",
     "lint": "npm --workspaces run lint --if-present"

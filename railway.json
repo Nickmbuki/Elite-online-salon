@@ -5,7 +5,6 @@
     "dockerfilePath": "frontend/Dockerfile",
     "watchPatterns": [
       "frontend/**",
-      "shared/**",
       "package.json",
       "package-lock.json",
       "tsconfig.base.json"
