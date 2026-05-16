@@ -8,6 +8,7 @@ Elite Doorstep Salon is a full TypeScript monorepo for a premium mobile salon bo
 - `backend`: Node.js + Express + TypeScript + Drizzle ORM + PostgreSQL + Zod
 - `shared`: Shared booking and API types
 - `docs`: Installation, development, database, PWA, booking, and Google Cloud deployment notes
+- `railway.yaml`: Railway deployment plan, with detected service configs in `backend/railway.json` and `frontend/railway.json`
 
 The frontend includes a Share tab at `/share` with native device sharing, WhatsApp/SMS/email links, and clipboard fallback.
 
@@ -48,3 +49,4 @@ Only available slots are shown. `POST /api/bookings` re-checks availability in a
 - Drizzle ORM PostgreSQL and migrations: https://orm.drizzle.team/docs
 - Cloud Run Node/container deployment: https://cloud.google.com/run/docs
 - vite-plugin-pwa: https://vite-pwa-org.netlify.app
+- Railway Config as Code and monorepo deployment: https://docs.railway.com/config-as-code/reference and https://docs.railway.com/deployments/monorepo

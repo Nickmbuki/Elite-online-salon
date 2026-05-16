@@ -1,0 +1,41 @@
+# Railway deployment plan for Elite Doorstep Salon.
+# Railway currently auto-detects Config as Code from railway.json or railway.toml.
+# Use this YAML as the human-readable project plan, and point each Railway
+# service to the matching config file below.
+
+project: Elite Doorstep Salon
+repository: https://github.com/Nickmbuki/Elite-online-salon
+
+services:
+  backend:
+    name: elite-doorstep-salon-backend
+    rootDirectory: /
+    configFile: /backend/railway.json
+    dockerfilePath: backend/Dockerfile
+    healthcheckPath: /api/health
+    requiredVariables:
+      - DATABASE_URL
+      - CORS_ORIGIN
+    optionalVariables:
+      - PORT
+    notes:
+      - Add a Railway PostgreSQL service or external PostgreSQL database.
+      - Set DATABASE_URL from the Railway database connection string.
+      - Set CORS_ORIGIN to the deployed frontend domain.
+      - Run backend migrations before accepting production bookings.
+
+  frontend:
+    name: elite-doorstep-salon-frontend
+    rootDirectory: /
+    configFile: /frontend/railway.json
+    dockerfilePath: frontend/Dockerfile
+    requiredVariables:
+      - VITE_API_BASE_URL
+    notes:
+      - Set VITE_API_BASE_URL to the deployed backend public URL.
+      - The frontend Dockerfile serves the Vite build through Nginx on Railway's PORT.
+
+database:
+  type: PostgreSQL
+  provider: Railway PostgreSQL
+  migrationCommand: npm run db:migrate --workspace backend
