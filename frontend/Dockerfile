@@ -15,10 +15,11 @@ RUN npm ci --include=dev
 COPY frontend ./frontend
 RUN npm run build --workspace @elite-doorstep-salon/frontend
 
-FROM nginx:1.27-alpine AS runtime
+FROM node:22-alpine AS runtime
+WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=8080
-COPY frontend/nginx.conf.template /etc/nginx/templates/default.conf.template
-COPY --from=build /app/frontend/dist /usr/share/nginx/html
+COPY frontend/server.mjs ./server.mjs
+COPY --from=build /app/frontend/dist ./dist
 EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "server.mjs"]

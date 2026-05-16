@@ -29,6 +29,7 @@ services:
     rootDirectory: /
     configFile: /frontend/railway.json
     dockerfilePath: frontend/Dockerfile
+    healthcheckPath: /health
     requiredVariables:
       - VITE_API_BASE_URL
     notes:

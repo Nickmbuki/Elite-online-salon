@@ -8,7 +8,7 @@ Railway currently detects Config as Code from `railway.json` or `railway.toml`. 
 - `backend/railway.json`: backend service config detected by Railway
 - `frontend/railway.json`: frontend service config detected by Railway
 - `backend/Dockerfile`: backend container
-- `frontend/Dockerfile`: frontend container
+- `frontend/Dockerfile`: frontend container with a Node static server
 
 ## Services
 
@@ -65,6 +65,6 @@ It connects to PostgreSQL, applies the initial schema if needed, and seeds servi
 ## Notes
 
 - The backend healthcheck is `/api/health`.
-- The frontend healthcheck is `/`.
-- The frontend serves the Vite build through Nginx and listens on Railway's `PORT`.
+- The frontend healthcheck is `/health`.
+- The frontend serves the Vite build through a small Node static server and listens on Railway's `PORT`.
 - Pending and confirmed bookings remain collision-free through backend transaction checks and the PostgreSQL exclusion constraint.
