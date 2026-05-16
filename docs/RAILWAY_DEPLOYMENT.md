@@ -5,9 +5,9 @@ Railway currently detects Config as Code from `railway.json` or `railway.toml`. 
 ## Files
 
 - `railway.yaml`: project-level Railway deployment plan
-- `railway.json`: default root config for the frontend service
+- `railway.json`: default root config for the frontend service using the root `Dockerfile`
 - `backend/railway.json`: backend service config detected by Railway
-- `frontend/railway.json`: frontend service config detected by Railway
+- `frontend/railway.json`: frontend-root service config using `frontend/Dockerfile`
 - `backend/Dockerfile`: backend container
 - `frontend/Dockerfile`: frontend container with a Node static server
 
@@ -30,12 +30,15 @@ Frontend service:
 
 ```text
 Config file path: /frontend/railway.json
-Root directory: /
+Root directory: /frontend
 ```
 
-If Railway is only deploying one service from the repo root, the root `railway.json` defaults that deployment to the frontend app.
+If Railway is only deploying one service from the repo root, leave the root directory as `/` and use the root `railway.json`. That path uses the root `Dockerfile` and deploys the frontend app.
 
-The root directory stays `/` because both Dockerfiles build from the monorepo root and copy shared workspace files.
+Use only one of these frontend paths:
+
+- Root deployment: root directory `/`, config file `/railway.json`
+- Frontend-root deployment: root directory `/frontend`, config file `/frontend/railway.json`
 
 ## Backend Variables
 
