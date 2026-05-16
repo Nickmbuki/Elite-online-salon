@@ -17,7 +17,8 @@ RUN npm run build --workspace @elite-doorstep-salon/frontend
 
 FROM nginx:1.27-alpine AS runtime
 ENV NODE_ENV=production
-COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
+ENV PORT=8080
+COPY frontend/nginx.conf.template /etc/nginx/templates/default.conf.template
 COPY --from=build /app/frontend/dist /usr/share/nginx/html
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]

@@ -66,5 +66,5 @@ You can run this locally with Railway variables, or from a one-off Railway shell
 
 - The backend healthcheck is `/api/health`.
 - The frontend healthcheck is `/`.
-- The frontend serves the Vite build through Nginx.
+- The frontend serves the Vite build through Nginx and listens on Railway's `PORT`.
 - Pending and confirmed bookings remain collision-free through backend transaction checks and the PostgreSQL exclusion constraint.
