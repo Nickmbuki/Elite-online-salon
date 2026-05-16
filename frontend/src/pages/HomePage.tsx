@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { GalleryItem, Service, Testimonial } from "@elite-doorstep-salon/shared";
+import type { GalleryItem, Service, Testimonial } from "../types/api";
 import { AboutSection } from "../components/AboutSection";
 import { ContactSection } from "../components/ContactSection";
 import { FaqSection } from "../components/FaqSection";

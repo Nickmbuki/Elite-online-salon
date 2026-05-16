@@ -8,12 +8,11 @@ ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 COPY package*.json ./
 COPY tsconfig.base.json ./
 COPY shared/package*.json ./shared/
+COPY backend/package*.json ./backend/
 COPY frontend/package*.json ./frontend/
 RUN npm ci --include=dev
 
-COPY shared ./shared
 COPY frontend ./frontend
-RUN npm run build --workspace @elite-doorstep-salon/shared
 RUN npm run build --workspace @elite-doorstep-salon/frontend
 
 FROM nginx:1.27-alpine AS runtime

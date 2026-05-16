@@ -1,4 +1,4 @@
-import type { Testimonial } from "@elite-doorstep-salon/shared";
+import type { Testimonial } from "../types/api";
 
 export const fallbackTestimonials: Testimonial[] = [
   {

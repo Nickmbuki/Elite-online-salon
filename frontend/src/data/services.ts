@@ -1,4 +1,4 @@
-import type { Service } from "@elite-doorstep-salon/shared";
+import type { Service } from "../types/api";
 
 const createdAt = new Date().toISOString();
 

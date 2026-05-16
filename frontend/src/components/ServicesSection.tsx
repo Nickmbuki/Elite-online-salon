@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Baby, Brush, HandHeart, Home, Sparkles } from "lucide-react";
-import type { Service } from "@elite-doorstep-salon/shared";
+import type { Service } from "../types/api";
 import { SectionHeading } from "./SectionHeading";
 
 const categoryIcons = {

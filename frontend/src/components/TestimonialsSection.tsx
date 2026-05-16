@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import type { Testimonial } from "@elite-doorstep-salon/shared";
+import type { Testimonial } from "../types/api";
 import { SectionHeading } from "./SectionHeading";
 
 interface TestimonialsSectionProps {

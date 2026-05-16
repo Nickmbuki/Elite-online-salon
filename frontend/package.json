@@ -7,10 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "typecheck": "npm run build --workspace @elite-doorstep-salon/shared && tsc -b --noEmit"
+    "typecheck": "tsc -b --noEmit"
   },
   "dependencies": {
-    "@elite-doorstep-salon/shared": "file:../shared",
     "@vite-pwa/assets-generator": "^0.2.6",
     "framer-motion": "^12.18.1",
     "lucide-react": "^0.468.0",

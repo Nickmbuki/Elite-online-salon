@@ -1,4 +1,4 @@
-import type { BookingRequest, BookingResponse, GalleryItem, Service, Testimonial, TimeSlot } from "@elite-doorstep-salon/shared";
+import type { BookingRequest, BookingResponse, GalleryItem, Service, Testimonial, TimeSlot } from "../types/api";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 

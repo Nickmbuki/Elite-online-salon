@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { CalendarDays, CheckCircle2, Clock, Home, Loader2, MapPin } from "lucide-react";
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import type { BookingRequest, Service, TimeSlot } from "@elite-doorstep-salon/shared";
+import type { BookingRequest, Service, TimeSlot } from "../types/api";
 import { fallbackServices } from "../data/services";
 import { createBooking, getAvailability, getServices } from "../lib/api";
 

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import type { GalleryItem } from "@elite-doorstep-salon/shared";
+import type { GalleryItem } from "../types/api";
 import { SectionHeading } from "./SectionHeading";
 
 interface GallerySectionProps {

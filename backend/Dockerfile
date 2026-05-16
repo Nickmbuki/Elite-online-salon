@@ -5,12 +5,11 @@ ENV NODE_ENV=development
 COPY package*.json ./
 COPY tsconfig.base.json ./
 COPY shared/package*.json ./shared/
+COPY frontend/package*.json ./frontend/
 COPY backend/package*.json ./backend/
 RUN npm ci --include=dev
 
-COPY shared ./shared
 COPY backend ./backend
-RUN npm run build --workspace @elite-doorstep-salon/shared
 RUN npm run build --workspace @elite-doorstep-salon/backend
 RUN npm prune --omit=dev
 
