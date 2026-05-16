@@ -1,0 +1,32 @@
+{
+  "name": "@elite-doorstep-salon/frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "npm run build --workspace @elite-doorstep-salon/shared && tsc -b --noEmit"
+  },
+  "dependencies": {
+    "@elite-doorstep-salon/shared": "file:../shared",
+    "@vite-pwa/assets-generator": "^0.2.6",
+    "framer-motion": "^12.18.1",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2",
+    "vite-plugin-pwa": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0"
+  }
+}

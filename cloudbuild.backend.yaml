@@ -1,0 +1,39 @@
+substitutions:
+  _REGION: us-central1
+  _SERVICE: elite-doorstep-salon-backend
+  _CORS_ORIGIN: https://elite-doorstep-salon.example.com
+  _CLOUD_SQL_INSTANCE: PROJECT_ID:REGION:INSTANCE
+
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - backend/Dockerfile
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/elite-doorstep-salon/backend:$COMMIT_SHA
+      - .
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/elite-doorstep-salon/backend:$COMMIT_SHA
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/elite-doorstep-salon/backend:$COMMIT_SHA
+      - --region
+      - ${_REGION}
+      - --platform
+      - managed
+      - --allow-unauthenticated
+      - --add-cloudsql-instances
+      - ${_CLOUD_SQL_INSTANCE}
+      - --set-env-vars
+      - PORT=8080,CORS_ORIGIN=${_CORS_ORIGIN}
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/elite-doorstep-salon/backend:$COMMIT_SHA

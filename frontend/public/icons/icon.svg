@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title">
+  <title id="title">Elite Doorstep Salon app icon placeholder</title>
+  <rect width="192" height="192" rx="44" fill="#fffaf5"/>
+  <circle cx="96" cy="96" r="70" fill="#f5dfc6"/>
+  <path d="M55 124c32-58 59-58 82 0" fill="none" stroke="#7c4a3d" stroke-width="10" stroke-linecap="round"/>
+  <path d="M68 74c16-18 40-18 56 0" fill="none" stroke="#b77b6b" stroke-width="8" stroke-linecap="round"/>
+  <text x="96" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#3f2a24">EDS</text>
+</svg>
